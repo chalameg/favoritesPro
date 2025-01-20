@@ -34,7 +34,7 @@ const EditProject: React.FC = () => {
     const fetchProject = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:3001/projects/${id}`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/projects/${id}`);
         setFormData(response.data); // Populate the form with the fetched data
       } catch (err: any) {
         console.log(err)
@@ -60,7 +60,7 @@ const EditProject: React.FC = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:3001/projects/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/projects/${id}`,
         formData
       );
       console.log('Project updated:', response.data);

@@ -39,7 +39,7 @@ const CreateProject: React.FC = () => {
     setError(null);
 
     try {
-      const response = await axios.post('http://localhost:3001/projects', formData);
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/projects`, formData);
       console.log('Project created:', response.data);
       router.push('/'); // Redirect to the project list page
     } catch (err: any) {

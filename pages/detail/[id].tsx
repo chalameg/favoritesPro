@@ -24,7 +24,7 @@ const ProjectDetail: React.FC = () => {
     const fetchProject = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:3001/projects/${id}`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/projects/${id}`);
         setProject(response.data); // Populate the project state with the fetched data
       } catch (err: any) {
         console.log(err)

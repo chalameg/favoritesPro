@@ -30,7 +30,7 @@ const ProjectList: React.FC = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get<Project[]>('http://localhost:3001/projects');
+        const response = await axios.get<Project[]>(`${process.env.NEXT_PUBLIC_API_URL}/projects`);
         setProjects(response.data);
       } catch (err: any) {
         console.log(err)
@@ -56,7 +56,7 @@ const ProjectList: React.FC = () => {
   // Handle favorite toggle
   const handleToggleFavorite = (project: Project) => {
     axios
-      .post(`http://localhost:3001/projects/${project.id}/favorite`)
+      .post(`${process.env.NEXT_PUBLIC_API_URL}/projects/${project.id}/favorite`)
       .then(() => {
         toggleFavorite(project);
         setProjects((prev) =>
