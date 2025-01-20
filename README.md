@@ -1,4 +1,4 @@
-# **React Next.js Assessment**
+# **React Next.js Assessment 2**
 
 This is a React and Next.js application that manages projects. The app allows users to list, create, edit, and view project details while integrating mock API functionality using an Express server. It demonstrates state management with React Context, Material-UI for UI components, and responsive design.
 
