@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "npm install --force && next build",
+    "build": "npm run lint && next build",
     "start": "next start",
     "lint": "next lint"
+  },
+  "engines": {
+    "node": "20.14.0"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
