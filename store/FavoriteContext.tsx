@@ -1,13 +1,17 @@
-import React, { createContext, useState, ReactNode } from 'react';
+import React, { createContext, useState, ReactNode, SetStateAction, Dispatch } from 'react';
 import { Project } from '../types/project';
 
 interface FavoriteContextType {
   favorites: Project[];
+  setFavorites: Dispatch<SetStateAction<Project[]>>;
   toggleFavorite: (project: Project) => void;
 }
 
 const defaultValue: FavoriteContextType = {
   favorites: [],
+  setFavorites: () => {
+    throw new Error('setFavorites must be used within a FavoriteProvider');
+  },
   toggleFavorite: () => {
     throw new Error('toggleFavorite must be used within a FavoriteProvider');
   },
@@ -27,7 +31,7 @@ export const FavoriteProvider: React.FC<{ children: ReactNode }> = ({ children }
   };
 
   return (
-    <FavoriteContext.Provider value={{ favorites, toggleFavorite }}>
+    <FavoriteContext.Provider value={{ favorites, setFavorites, toggleFavorite }}>
       {children}
     </FavoriteContext.Provider>
   );

@@ -24,7 +24,7 @@ const ProjectList: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
-  const { toggleFavorite } = useContext(FavoriteContext);
+  const {setFavorites, toggleFavorite } = useContext(FavoriteContext);
 
   // Fetch projects from the API
   useEffect(() => {
@@ -32,6 +32,10 @@ const ProjectList: React.FC = () => {
       try {
         const response = await axios.get<Project[]>(`${process.env.NEXT_PUBLIC_API_URL}/projects`);
         setProjects(response.data);
+
+        // Set the favorites based on 'isFavorite' flag
+        const favoriteProjects = response.data.filter((project) => project.isFavorite);
+        setFavorites(favoriteProjects);  // Set favorites from the fetched data
       } catch (err: any) {
         console.log(err)
         setError('Failed to fetch projects.');

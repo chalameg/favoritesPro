@@ -20,6 +20,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/mockApi.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/mockApi.js", "pages/api/projects.js"],
   "exclude": ["node_modules"]
 }
