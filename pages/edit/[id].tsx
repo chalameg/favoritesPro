@@ -65,7 +65,8 @@ const EditProject: React.FC = () => {
       );
       console.log('Project updated:', response.data);
       router.push('/'); // Redirect to the project list page
-    } catch (err) {
+    } catch (err: any) {
+        console.log(err)
       setError('Failed to update project. Please try again.');
     } finally {
       setSaving(false);
