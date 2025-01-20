@@ -36,7 +36,8 @@ const EditProject: React.FC = () => {
       try {
         const response = await axios.get(`http://localhost:3001/projects/${id}`);
         setFormData(response.data); // Populate the form with the fetched data
-      } catch (err) {
+      } catch (err: any) {
+        console.log(err)
         setError('Failed to load project details.');
       } finally {
         setLoading(false);

@@ -26,7 +26,8 @@ const ProjectDetail: React.FC = () => {
       try {
         const response = await axios.get(`http://localhost:3001/projects/${id}`);
         setProject(response.data); // Populate the project state with the fetched data
-      } catch (err) {
+      } catch (err: any) {
+        console.log(err)
         setError('Failed to load project details.');
       } finally {
         setLoading(false);

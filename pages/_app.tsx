@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppProps } from 'next/app';
 import '../styles/globals.css';
-import { CssBaseline, useMediaQuery, Drawer, AppBar, Toolbar, Typography, Box } from '@mui/material';
+import { CssBaseline, useMediaQuery, AppBar, Toolbar, Typography, Box } from '@mui/material';
 import FavoriteSidebar from '@/components/FavoriteSidebar';
 import { FavoriteProvider } from '@/store/FavoriteContext';
 

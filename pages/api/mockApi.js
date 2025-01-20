@@ -1,5 +1,10 @@
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const express = require('express');
+
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const cors = require('cors');
+
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const bodyParser = require('body-parser');
 
 const app = express();

@@ -42,8 +42,9 @@ const CreateProject: React.FC = () => {
       const response = await axios.post('http://localhost:3001/projects', formData);
       console.log('Project created:', response.data);
       router.push('/'); // Redirect to the project list page
-    } catch (err) {
-      setError('Failed to create project. Please try again.');
+    } catch (err: any) {
+        console.log(err)
+      setError(`Failed to create project. Please try again. `);
     } finally {
       setLoading(false);
     }
